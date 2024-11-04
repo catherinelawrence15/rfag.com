@@ -1,0 +1,763 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+:root {
+    --primary-color: #090a38;
+    --light-color: #f4f4f6;
+    --dark-color: #451313;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+/* Navbar Styles */
+.navbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
+}
+
+.container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    width: 100%; 
+}
+/* Logo Styles */
+.logo img {
+    height: 10vw; 
+    max-width: 100%; 
+    height: auto; 
+}
+
+/* Media Query for larger screens */
+@media (min-width: 768px) {
+    .logo img {
+        height: 50px;
+    }
+}
+
+/* Media Query for medium screens */
+@media (max-width: 767px) {
+    .logo img {
+        height: 8vw;
+    }
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 480px) {
+    .logo img {
+        height: 6vw;
+    }
+}
+
+/* Main Menu Styles */
+.main-menu ul {
+    display: flex; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.main-menu li {
+    margin-right: 20px; 
+}
+/* Dots Menu Styles */
+.dots-menu {
+    display: none; 
+}
+
+/* Hamburger Menu Styles */
+.hamburger-button {
+    display: none; 
+    flex-direction: column; 
+    cursor: pointer; 
+}
+
+.hamburger-line {
+    width: 25px; 
+    height: 3px; 
+    background-color: #333; 
+    margin: 3px 0; 
+}
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none; 
+    position: absolute;
+    right: 0; 
+    top: 50px; 
+    background-color: white; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+    opacity: 0; 
+    transform: translateY(-10px); 
+}
+
+.dropdown-menu.show {
+    display: block; 
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+/* Update dots menu button to ensure it has space */
+.dots-button {
+    position: relative; 
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .main-menu {
+        display: none; 
+    }
+
+    .dots-menu {
+        display: block; 
+    }
+
+    .hamburger-button {
+        display: flex; 
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 8px 10px; 
+        font-size: 14px; 
+    }
+
+    .main-menu ul {
+        display: none; 
+    }
+
+    .hamburger-button {
+        display: flex; 
+
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 6px 8px; 
+        font-size: 12px; 
+    }
+
+    .logo img {
+        height: 40px; 
+    }
+
+    .hamburger-line {
+        width: 20px; 
+        height: 2px; 
+    }
+}
+
+
+/* Main Menu Styles */
+.main-menu ul {
+    list-style: none; 
+    display: flex; 
+    margin: 0;
+    padding: 0; 
+}
+
+.main-menu li {
+    margin-right: 20px; 
+}
+
+.main-menu a {
+    text-decoration: none; 
+    color: #333; 
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
+
+.main-menu a:hover {
+    color: rgba(255, 0, 0, 0.7); 
+}
+
+/* Dots Menu Styles */
+.dots-menu {
+    position: relative; 
+    z-index: 15;
+}
+
+.dots-button {
+    background: transparent; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease; 
+}
+
+.dots-button:hover {
+    color: rgba(255, 0, 0, 0.7); 
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none; 
+    position: absolute; 
+    top: 40px; 
+    right: 0; 
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 5px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    z-index: 20;
+   
+}
+
+.dropdown-menu.active {
+    display: block; 
+    
+}
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.hamburger-button {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+}
+
+.hero {
+    background-image: url('pastor.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.hero-heading {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin: 0;
+}
+.hero-text {
+    font-size: 1.5rem;
+}
+
+.bible-verse {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    .hero-heading {
+        font-size: 2.5rem;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+    }
+
+    .bible-verse {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-heading {
+        font-size: 2rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .bible-verse {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+    }
+}
+
+.find-your-place-section {
+    background-color: #fbfbfb;
+    font-family: 'Playfair Display', serif;
+    color: #3939c0;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.find-your-place-section h2 {
+    font-size: 2.5rem;
+    color: #3a3a4d;
+    margin-bottom: 20px;
+}
+
+.find-your-place-section p {
+    color: #643535;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+}
+
+.ministries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.ministry-card {
+    background-color: #292929;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.ministry-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.ministry-card h3 {
+    font-size: 1.5rem;
+    color: #e6e6fa;
+    margin-bottom: 10px;
+}
+
+.ministry-card p {
+    color: #c9c9c9;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.ministry-card button {
+    background-color: #4c3a51;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ministry-card button:hover {
+    background-color: #6a5acd;
+}
+
+.ministry-card:hover {
+    transform: scale(1.05);
+}
+
+@keyframes backgroundMorph {
+    0% {
+        background-color: #E0E7FF;
+    }
+    33% {
+        background-color: #1E3A8A;
+    }
+    66% {
+        background-color: #000000;
+    }
+    100% {
+        background-color: #E0E7FF;
+    }
+}
+
+@media (max-width: 768px) {
+    .find-your-place-section h2 {
+        font-size: 2rem;
+    }
+    .find-your-place-section p {
+        font-size: 1rem;
+    }
+    .ministry-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .find-your-place-section h2 {
+        font-size: 1.8rem;
+    }
+    .find-your-place-section p {
+        font-size: 0.9rem;
+    }
+    .ministry-card {
+        width: 95%;
+    }
+}
+
+.services-section {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #6a6abf, #0b070d);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+
+/* Heading styles */
+.services-section h2 {
+    font-family: 'arial', sans-serif; 
+    text-align: left;
+    margin-top: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #f6eefb; 
+}
+
+/* Container for service videos */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Individual service video styles */
+.service-video {
+    position: relative;
+    width: 100%;
+    max-width: 560px; /* Responsive max width for videos */
+    border-radius: 10px;
+    overflow: hidden; /* Hide overflow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Hidden by default */
+    transform: translateY(50px); /* Move down for the slide effect */
+    transition: opacity 0.9s ease, transform 0.9s ease; /* Transition for both opacity and transform */
+}
+
+/* Style for the iframe */
+.service-video iframe {
+    width: 100%;
+    height: 315px; /* Maintain 16:9 aspect ratio */
+    border: none; /* Remove default border */
+    transition: transform 0.3s ease; /* Animation for hover effect */
+}
+
+/* Hover effect for videos */
+.service-video:hover iframe {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+/* Styles for video title */
+.service-video {
+    position: relative;
+    width: 100%;
+    max-width: 560px; /* Responsive max width for videos */
+    border-radius: 10px;
+    overflow: hidden; /* Hide overflow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Hidden by default */
+    transform: translateY(50px); /* Move down for the slide effect */
+    transition: opacity 0.5s ease 1s, transform 0.5s ease 1s; /* Adding 1s delay before animation starts */
+}
+/* Styles for the watch more button */
+.watch-more {
+    margin-top: 20px;
+    padding: 12px 24px; 
+    font-size: 1.2rem;
+    background-color: #040e19;
+    color: white;     border: none; 
+    border-radius: 25px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.3s ease;     text-align: center; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); }
+
+/* Hover effect for the watch more button */
+.watch-more:hover {
+    background-color: #88b8ec;
+    transform: scale(1.05); }
+
+
+/* Parallax effect */
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Everywhere\ are\ you_\ \ Culture\ blinds\ the\ path\ you\ you.\ Grab\ our\ hands.\ Now\ hug') no-repeat center center fixed; /* Change to your image path */
+    background-size: cover;
+    z-index: -1; 
+    opacity: 0.5; }
+/* Prayer Icon */
+.prayer-icon {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Wrapper */
+.prayer-form-wrapper {
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Header with Arrow */
+.form-header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.form-header h3 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.form-header::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+/* Form Fields */
+#prayer-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+
+#prayer-form input, 
+#prayer-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Submit Button */
+#prayer-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+#prayer-form button:hover {
+    background-color: #555;
+}
+
+/* Confirmation Message */
+#confirmation-message {
+    display: none;
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Footer */
+#footer {
+    background-color: #000000;     color: #ffffff;
+    padding: 40px;     position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    text-align: left;
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.footer-content h2 {
+    font-family: 'Garamond', serif; 
+    font-size: 2em;
+    margin-bottom: 15px; 
+}
+
+.footer-links {
+    margin-bottom: 15px; 
+}
+
+.footer-links a {
+    color: #fbe8e4; 
+    text-decoration: none;
+    margin-right: 20px; 
+    transition: color 0.3s; 
+    font-weight: bold; 
+}
+
+.footer-links a:hover {
+    color: #ffffff; 
+}
+.social-media {
+    margin: 20px 0; 
+}
+
+.social-media a {
+    color: #ffcc00; 
+    font-size: 1.5em; 
+    transition: color 0.3s; 
+}
+
+.social-media a:hover {
+    color: #ffffff; 
+}
+
+#footer p {
+    font-size: 1em; 
+    margin: 0; 
+    margin-top: 10px; 
+    opacity: 0.8; 
+}
+
+
+@media (max-width: 768px) {
+    .prayer-icon {
+        width: 40px;
+        font-size: 1.2rem;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .prayer-form-wrapper {
+        padding: 15px;
+    }
+
+    .form-header {
+        font-size: 1.1rem;
+    }
+
+    #prayer-form button {
+        font-size: 0.9rem;
+    }
+
+    .footer-content h2 {
+        font-size: 1.5em;
+    }
+
+    .footer-links a {
+        font-size: 0.9em;
+        margin-right: 10px;
+    }
+
+    .social-media a {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .prayer-icon {
+        width: 35px;
+        font-size: 1rem;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .prayer-form-wrapper {
+        padding: 10px;
+    }
+
+    .form-header {
+        font-size: 1rem;
+    }
+
+    #prayer-form button {
+        font-size: 0.8rem;
+    }
+
+    .footer-content h2 {
+        font-size: 1.2em;
+    }
+
+    .footer-links a {
+        font-size: 0.8em;
+        margin-right: 8px;
+    }
+
+    .social-media a {
+        font-size: 1em;
+    }
+}

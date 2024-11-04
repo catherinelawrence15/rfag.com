@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>RFAG Church</title>
+    <link rel="shortcut icon" href="16.png" type="image/x-icon">
+</head>
+<body>
+   <!-- Navbar -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"><img src="120.png" alt="logo"></a> 
+        </div>
+        <div class="main-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Sermons</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="btn">Giving</a></li>
+            </ul>
+        </div>
+        <div class="dots-menu">
+            <button id="dots-button" class="dots-button">...</button>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Sermons</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <button id="hamburger-button" class="hamburger-button">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </button>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-heading text-xxl"></h1>
+            <p class="hero-text">
+            </p>
+            <!-- Typewriter effect span for the Bible verse -->
+            <span class="bible-verse" id="typewriter"></span> 
+            </div>
+        </div>
+    </div>
+</section>
+<section id="find-your-place" class="find-your-place-section">
+    <h2>Find Your Place at Rhema Faith AG Church</h2>
+    <p>Discover the ministry that fits your calling and make a difference within our community.</p>
+
+    <div class="ministries">
+        <div class="ministry-card">
+            <img src="Uma cruz sobre fundo branco com flores e uma cruz de madeira_ _ imagem Premium gerada com IA.jpeg" alt="Worship Team">
+            <h3>Worship Team</h3>
+            <p>Join our passionate worship team to lead others in powerful, spirit-filled worship.</p>
+            <button>Join Us</button>
+        </div>
+        <div class="ministry-card">
+            <img src="To Dip or Not to Dip_ The Case Against Intinction.jpeg" alt="Children's Ministry">
+            <h3>Children's Ministry</h3>
+            <p>Help guide our young generation with love, faith, and fun-filled learning.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="ministry-card">
+            <img src="Everywhere are you_  Culture blinds the path you you. Grab our hands. Now hug" alt="Youth Group">
+            <h3>Youth Group</h3>
+            <p>Connect with other youth and build a strong foundation of faith for life’s journey.</p>
+            <button>Join Now</button>
+        </div>
+        <div class="ministry-card">
+            <img src="Double exposure of a hand girl praying and worship in the church, Hands folded in prayer concept for faith, spirituality and religion, Hands Raised In Worship background_.jpeg" alt="Outreach Programs">
+            <h3>Outreach Programs</h3>
+            <p>Be the hands and feet of Jesus in our community, sharing His love with those in need.</p>
+            <button>Volunteer</button>
+        </div>
+    </div>
+</section>
+<section id="services" class="services-section">
+    <div class="services-container">
+        <div class="service-video">
+            <iframe src="https://www.youtube.com/embed/IG98pWDO5vw?si=VCVqKTx6fk4czO8v" title="YouTube video player" allowfullscreen></iframe>
+            <p>Sermon Title 1: One Verses</p>
+        </div>
+        <div class="service-video">
+            <iframe src="https://www.youtube.com/embed/BYY5OBEYp1A?si=apPhdCoXGl7BtSqz" title="YouTube video player" allowfullscreen></iframe>
+            <p>Sermon Title 2: Another Verses</p>
+        </div>
+    </div>
+    <h2>Watch Latest Services from RFAG Church</h2>
+    <button class="watch-more">Watch More</button>
+</section>
+<!-- Prayer Request Icon to Open Form -->
+<div onclick="togglePrayerForm()" class="prayer-icon" style="cursor: pointer; padding: 10px; background-color: #333; color: white; border-radius: 50%; width: 50px; text-align: center; font-size: 1.5rem;">
+    📝
+  </div>
+  
+  <!-- Prayer Form Container -->
+  <div id="prayer-form-container" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 400px; z-index: 1000;">
+    <div class="prayer-form-wrapper">
+      <div class="form-header">
+        <h3>Send Your Prayer Request</h3>
+      </div>
+      <form id="prayer-form" onsubmit="handleFormSubmission(event)">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="prayerRequest">Prayer Request:</label>
+        <textarea id="prayerRequest" name="prayerRequest" rows="4" required></textarea>
+        
+        <button type="submit">Submit</button>
+      </form>
+      <p id="confirmation-message" class="hidden">Thank you! Your prayer request has been sent.</p>
+    </div>
+  </div>
+  <footer id="footer">
+    <div class="footer-content">
+        <h2>Rhema Faith AG Church</h2>
+        <div class="footer-links">
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2024 Rhema Faith AG Church. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+    <script src="main.js"></script>
+    <script>
+        // Function to check if an element is in the viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    
+        // Function to handle scroll event
+        function handleScroll() {
+            const servicesSection = document.querySelector('.services-section');
+            const serviceVideos = document.querySelectorAll('.service-video');
+    
+            // Reveal the section
+            if (isInViewport(servicesSection)) {
+                servicesSection.style.opacity = '1'; // Fade in the section
+                serviceVideos.forEach((video, index) => {
+                    setTimeout(() => {
+                        video.style.opacity = '1'; // Fade in each video
+                        video.style.transform = 'translateY(0)'; // Slide in each video
+                    }, index * 200); // Delay each video for staggered effect
+                });
+                // Remove the event listener once done
+                window.removeEventListener('scroll', handleScroll);
+            }
+        }
+    
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+    </script>
+    
+</body>
+</html>
